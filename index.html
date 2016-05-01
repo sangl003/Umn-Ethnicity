@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Umn-Ethnicity by sangl003</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Umn-Ethnicity</h1>
+      <h2 class="project-tagline">Umn-ethnicity</h2>
+      <a href="https://github.com/sangl003/Umn-ethnicity" class="btn">View on GitHub</a>
+      <a href="https://github.com/sangl003/Umn-ethnicity/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sangl003/Umn-ethnicity/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="visit-map-here" class="anchor" href="#visit-map-here" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://sangl003.github.io/Umn-ethnicity/Ethnicity.html">Visit Map Here!</a>
+</h3>
+
+<h3>
+<a id="welcome-to-university-of-minnesota-ethnicity-2013-2015" class="anchor" href="#welcome-to-university-of-minnesota-ethnicity-2013-2015" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to University of Minnesota Ethnicity 2013-2015.</h3>
+
+<p>This analysis is basically to understand if there is a pattern in choosing education trade and ethnicity. Being an international student I know how cultural background can change the way you think. I have personally experienced this and always had a question about how human behavior can be influenced by the culture or the upbringing of a person.
+While growing up and learning Indian history, I found the relation how a doctor’s son will be doctor or how children follow or are supposed to follow what their ancestors did. Eventually, development and evolving led people to choose different trades and the pattern changed over time. This analysis can help us understand how ethnicity of a person can lead to change in choosing education and the patterns in it. This can allow us to understand the reasons behind the human behavior. Example Asians are more leaned to choose science, engineering or mathematical trades. Is this because of the culture, environment or the job opportunities available around or anatomy of the brain - that they are good in specific area? There can be many different reasons and to start looking for answers, one can start from analyzing the relationship between Ethnicity and education one chooses to help solve these mysteries.</p>
+
+<h3>
+<a id="objective-of-the-analysis" class="anchor" href="#objective-of-the-analysis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Objective of the analysis:</h3>
+
+<p>To learn about the diverse population around the campus
+To visualize the Ethnicity patterns 
+To study the pattern respect to the level of studies and departments
+To analyze the relationship between the ethnicity and the trade </p>
+
+<h3>
+<a id="data-sources" class="anchor" href="#data-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data sources</h3>
+
+<p>I have received the data from the OIT department of University. The U policy on student data privacy does not allow to share the records with ethnicity head count below 5. So this data represents and approximate visualization and can be used as a general reference map. </p>
+
+<p>The department information is received from Facility management, UServices.  This data consist of the department information like OBJECTID,Dept_by_building_BUILDING,Dept_by_building_DEPTID,Dept_by_building_DEPT_DESC,
+Structure_Footprint_CAMPUS_NUMBER,Structure_Footprint_BUILDING_NUMBER,Structure_Footprint_NAME,
+Structure_Footprint_NAME_ABBREV,Structure_Footprint_NAME_ALTERNATE,Structure_Footprint_ADDRESS1,
+Structure_Footprint_ADDRESS2,Structure_Footprint_CITY,Structure_Footprint_STATE,Structure_Footprint_ZIP,
+Structure_Footprint_SITE_BLDG,Structure_Footprint_ACCESSIBLE_YN,Structure_Footprint_MAP_URL_SMALL,
+Structure_Footprint_MAP_URL_LARGE,Structure_Footprint_GOOGLEMAP_URL,Structure_Footprint_BLDGPAGE_URL,
+Structure_Footprint_BLDG_PHOTO_URL,Structure_Footprint_Shape_Length,Structure_Footprint_Shape_Area,
+Structure_Footprint_X,Structure_Footprint_Y.</p>
+
+<p>I have selected Cartodb as the web mapping platform. I considered using ArcGIS online as well, however I was able to get more animations in Cartodb than ArcGIS online. </p>
+
+<h3>
+<a id="joining-the-data-wasnt-easy" class="anchor" href="#joining-the-data-wasnt-easy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Joining the data wasn't easy</h3>
+
+<p>Bring this two different data sets together was not an easy task. As the structure footprint layer of university only consists of the building information represented in polygons and not the department level spatial information. I had to create points for each building and its related departments.  I tried to automate the process using create random points but this didn't allow me get the related information. It created points but didn't have any information other than object id, which was not useful at all. So finally I digitized the data in ArcMap and got a department level footprints.</p>
+
+<p>Department data allows to spatially represent the ethnicity data. I have used building footprints layer to spatially locate the departments. Some departments do not have specific location due to privacy policies so those are placed to the relevant locations.</p>
+
+<p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/Departments.PNG" alt="deaprtments"></p>
+
+<p>Now this department point features had to be further divided into Ethnicity. This filed consisted for 8 coded values as given below.</p>
+
+<p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/legend.PNG" alt="legend"></p>
+
+<p>This meant diving those departments further into 8, each ethnicity information is associated with the headcount. This sounds simple but the ethnicity data consisted for different levels like Grad, Undergrad, Professional, Non degree. This whole data set was for three years. After cleaning the whole data set for days I finally got a Ethnicity department level point layer as shown below consisting of 1976 records of department level ethnicity.</p>
+
+<p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/Ethnicity.PNG" alt="Ethnicity layer"></p>
+
+<p>The final web map is developed in Cartodb, the layers in the map are Yearly Department level ethnicity (layer is time enabled), Ethnicity data (simple map), Ethnicity heat map. Both layers except the time enabled layer have pop ups with information regarding the building, department, Ethnicity, term, head count, buildings detail page and a photo. Some of the snap shots of the map are given below:</p>
+
+<p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/Capture.PNG" alt="Snap1"></p>
+
+<p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/Capture1.PNG" alt="Snap2"></p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>For more information you can contact me on Github <a href="https://github.com/sangl003" class="user-mention">@sangl003</a> or @ <a href="mailto:sangl003@umn.edu">sangl003@umn.edu</a></p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sangl003/Umn-ethnicity">Umn-Ethnicity</a> is maintained by <a href="https://github.com/sangl003">sangl003</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
