@@ -26,8 +26,8 @@
 <h3>
 <a id="welcome-to-university-of-minnesota-ethnicity-2013-2015" class="anchor" href="#welcome-to-university-of-minnesota-ethnicity-2013-2015" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to University of Minnesota Ethnicity 2013-2015.</h3>
 
-<p>This analysis is basically to understand if there is a pattern in choosing education trade and ethnicity. Being an international student I know how cultural background can change the way you think. I have personally experienced this and always had a question about how human behavior can be influenced by the culture or the upbringing of a person.
-While growing up and learning Indian history, I found the relation how a doctor’s son will be doctor or how children follow or are supposed to follow what their ancestors did. Eventually, development and evolving led people to choose different trades and the pattern changed over time. This analysis can help us understand how ethnicity of a person can lead to change in choosing education and the patterns in it. This can allow us to understand the reasons behind the human behavior. Example Asians are more leaned to choose science, engineering or mathematical trades. Is this because of the culture, environment or the job opportunities available around or anatomy of the brain - that they are good in specific area? There can be many different reasons and to start looking for answers, one can start from analyzing the relationship between Ethnicity and education one chooses to help solve these mysteries.</p>
+<p>This analysis is basically to understand if there is a pattern in choosing education trade and ethnicity. Being an international student I know how cultural background can change the way you think. I have personally experienced this and always had a question about how culture influences human behavior.
+While growing up and learning Indian history, I found the relation how a doctor’s son will be a doctor or how children follow or are supposed to follow what their ancestors did. Eventually, development and evolving led people to choose different trades and the pattern changed over time. This analysis can help us understand how ethnicity of an individual may result in the change in determining education and the patterns in it. This investigation will allow us to understand the reasons behind the human behavior. Example Asians are more inclined to choose science, engineering or mathematical trades. Is this because of the culture, environment or the job opportunities available around or anatomy of the brain - that they are good in the particular area? There can be many different reasons and to start looking for answers, one can start from analyzing the relationship between Ethnicity and education one chooses to help solve these mysteries.</p>
 
 <h3>
 <a id="objective-of-the-analysis" class="anchor" href="#objective-of-the-analysis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Objective of the analysis:</h3>
@@ -38,9 +38,9 @@ To study the pattern respect to the level of studies and departments
 To analyze the relationship between the ethnicity and the trade </p>
 
 <h3>
-<a id="data-sources" class="anchor" href="#data-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data sources</h3>
+<a id="data-source" class="anchor" href="#data-source" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data source</h3>
 
-<p>I have received the data from the Office of Institutional Research department of University of Minnesota. The U policy on student data privacy does not allow to share the records with ethnicity head count below 5. So this data represents and approximate visualization and can be used as a general reference map. </p>
+<p>I have received the data from the Office of Institutional Research department of the University of Minnesota. The U policy on student data privacy does not allow to share the records with ethnicity head count below 5. So this data represents and approximate visualization and can be used as a general reference map. </p>
 
 <p>The department information is received from Facility management, UServices.  This data consist of the department information like OBJECTID,Dept_by_building_BUILDING,Dept_by_building_DEPTID,Dept_by_building_DEPT_DESC,
 Structure_Footprint_CAMPUS_NUMBER,Structure_Footprint_BUILDING_NUMBER,Structure_Footprint_NAME,
@@ -51,26 +51,26 @@ Structure_Footprint_MAP_URL_LARGE,Structure_Footprint_GOOGLEMAP_URL,Structure_Fo
 Structure_Footprint_BLDG_PHOTO_URL,Structure_Footprint_Shape_Length,Structure_Footprint_Shape_Area,
 Structure_Footprint_X,Structure_Footprint_Y.</p>
 
-<p>I have selected Cartodb as the web mapping platform. I considered using ArcGIS online as well, however I was able to get more animations in Cartodb than ArcGIS online. </p>
+<p>I have selected Cartodb as the web mapping platform. I considered using ArcGIS online as well. However, I was able to get more animations in Cartodb than ArcGIS online. </p>
 
 <h3>
 <a id="joining-the-data-wasnt-easy" class="anchor" href="#joining-the-data-wasnt-easy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Joining the data wasn't easy</h3>
 
-<p>Bring this two different data sets together was not an easy task. As the structure footprint layer of university only consists of the building information represented in polygons and not the department level spatial information. I had to create points for each building and its related departments.  I tried to automate the process using create random points but this didn't allow me get the related information. It created points but didn't have any information other than object id, which was not useful at all. So finally I digitized the data in ArcMap and got a department level footprints.</p>
+<p>Bring this two different data sets together was not an easy task. As the footprint structure layer of the university only consists of the building information represented in polygons and not the department level spatial information. I had to create points for each building and its related departments.  I tried to automate the process using create random points, but this didn't allow me to get the relevant information. It produced points but didn't have any information other than object id, which was not useful at all. So finally I digitized the data in ArcMap and got a level department footprints.</p>
 
-<p>Department data allows to spatially represent the ethnicity data. I have used building footprints layer to spatially locate the departments. Some departments do not have specific location due to privacy policies so those are placed to the relevant locations.</p>
+<p>Department data allows representing the ethnicity data spatially. I have used building footprints layer to locate the units spatially. Some departments do not have specific location due to privacy policies, so those are placed in the relevant areas.</p>
 
 <p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/Departments.PNG" alt="deaprtments"></p>
 
-<p>Now this department point features had to be further divided into Ethnicity. This filed consisted for 8 coded values as given below.</p>
+<p>Now this department point features had to be further divided into Ethnicity. This field consisted of eight coded values as given below.</p>
 
 <p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/legend.PNG" alt="legend"></p>
 
-<p>This meant diving those departments further into 8, each ethnicity information is associated with the headcount. This sounds simple but the ethnicity data consisted for different levels like Grad, Undergrad, Professional, Non degree. This whole data set was for three years. After cleaning the whole data set for days I finally got a Ethnicity department level point layer as shown below consisting of 1976 records of department level ethnicity.</p>
+<p>That meant dividing those departments further into 8; It sounds simple, but the ethnicity data was made up of different levels like Grad, Undergrad, Professional, Nondegree. This whole data set was for three years. Cleaning up the data was most important and time-consuming task. Final Ethnicity department level layer consists of 1976 records. </p>
 
 <p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/Ethnicity.PNG" alt="Ethnicity layer"></p>
 
-<p>The final web map is developed in Cartodb, the layers in the map are Yearly Department level ethnicity (layer is time enabled), Ethnicity data (simple map), Ethnicity heat map. Both layers except the time enabled layer have pop ups with information regarding the building, department, Ethnicity, term, head count, buildings detail page and a photo. Some of the snap shots of the map are given below:</p>
+<p>I used Carto DB to develop the final web map, the layers in the map are Yearly Department level ethnicity ( the layer is time enabled), Ethnicity data (simple map), Ethnicity heat map. Both layers except the time-enabled layer to have pop-ups with information regarding the building, department, Ethnicity, term, headcount, buildings detail page and a photo. Some of the snapshots of the map:</p>
 
 <p><img src="https://raw.githubusercontent.com/sangl003/Umn-ethnicity/gh-pages/images/Capture.PNG" alt="Snap1"></p>
 
@@ -79,7 +79,7 @@ Structure_Footprint_X,Structure_Footprint_Y.</p>
 <h3>
 <a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusion:</h3>
 
-<p>The data analysis shows the following results for 2013 – 2015 which depicts some patterns like international students going for Grad studies as compared to other. Black ethnicity students going for undergrads more compared to grad studies. Hispanic population more in undergrad compared to other level of education etc. These results can further be categorized for detail of the ethnicity pattern. This study is not for racially discriminating any ethnic group but to know the reasons and to bring in resources to the students of particular ethnicity. This also allows us to understand the diverse culture of university and how university can help students to learn more about different cultures which would help them understand and respect different ethnicity.</p>
+<p>The data analysis shows the following results for 2013 – 2015 which depicts some patterns like international students going for Grad studies as compared to other. Black ethnicity students are going for undergrads more compared to grad studies. The Hispanic population more in undergrad compared to other levels of education etc. For detail of the ethnicity pattern, these results can further be categorized. This study is not for racially discriminating any ethnic group but to know the reasons and to bring in resources to the students of a particular ethnicity. It allows us to understand the diverse culture of the university and how the university can help students to learn more about different cultures which would assist them to understand and respect different ethnicity.</p>
 
 <p>The data analysis shows the following results for 2013 - 2015</p>
 
@@ -88,7 +88,7 @@ Structure_Footprint_X,Structure_Footprint_Y.</p>
 <h3>
 <a id="future-scope" class="anchor" href="#future-scope" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future scope:</h3>
 
-<p>The departments can be further bifurcated in categories like Arts, Science, Engineering, Commerce, Human resources etc. This will allow us to aggregate the students in these different categories and ethnicity. This will give broader perspective of ethnicities leaning towards some specific trades.</p>
+<p>We can bifurcate departments into more general categories like Arts, Science, Engineering, Commerce, Human Resources, etc. That will allow us to aggregate the students in these different groups and ethnicity. This analysis gives a broader perspective of ethnicities leaning towards some specific trades.</p>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
